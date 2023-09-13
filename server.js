@@ -20,9 +20,9 @@ db.on('error', (err) => { console.log('ERROR: ' , err)})
 db.on('connected', () => { console.log('mongo connected')})
 db.on('disconnected', () => { console.log('mongo disconnected')})
 
-app.get('/', (req, res) => {
-   res.send('Hello world!')
-})
+const inventoryController = require('./controller/inventory.js')
+
+app.use('/inventory', inventoryController)
 
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`)
