@@ -13,18 +13,15 @@
             <th>Part #</th>
             <th>Qty</th>
         </tr>
-        <!-- <% for( let i = 0; i < inventory.length; i++){ %>
+        <% for( let i = 0; i < inventory.length; i++){ %>
             <tr>
+                <td><%=inventory[i].name%></td>
                 <td><%=inventory[i].partNum%></td>
+                <td><%=inventory[i].quantity%></td>
             </tr>
 
-        <% } %> -->
-    </table>
-    <ul>
-        <% for( let i = 0; i < inventory.length; i++){ %>
-            <%=inventory[i].name%>
-
         <% } %>
-    </ul>
+    </table>
+    
 </body>
 </html>
