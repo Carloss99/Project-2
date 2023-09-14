@@ -5,7 +5,7 @@ const router = express.Router()
 const Inventory = require('../models/inventory')
 
 //Index Route
-router.get('/inventory', async (req,res) => {
+router.get('/', async (req,res) => {
     const inventoryfound = await Inventory.find({})
     console.log(inventoryfound)
     res.render('index.ejs', {
@@ -14,6 +14,10 @@ router.get('/inventory', async (req,res) => {
 })
 
 //Show route
-
+router.get('/:id', async(req,res) => {
+    const item = await Inventory.findById(req.params.id)
+    console.log(item)
+    res.send('hello world')
+})
 
 module.exports = router
