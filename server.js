@@ -22,6 +22,10 @@ db.on('disconnected', () => { console.log('mongo disconnected')})
 
 const inventoryController = require('./controller/inventory.js')
 
+app.get('/', (req,res) =>{
+    res.redirect('/inventory')
+})
+
 app.use('/inventory', inventoryController)
 
 app.listen(PORT, () => {
