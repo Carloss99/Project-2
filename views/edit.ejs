@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=accessory.name%></title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Accesssory</h1>
+        <form action="/inventory/<%=accessory.id%>?_method=PUT" method="POST">
+            <label for="name">Name: <input type="text" name="name" value="<%=accessory.name%>"></label>
+            
+
+            <label for="partNum">Part #: <input type="text" name="partNum" value="<%=accessory.partNum%>"></label>
+            
+
+            <label for="quantity">Quantity: <input type="number" name="quantity" value="<%=accessory.quantity%>"></label>
+            
+
+            <label for="image">Image URL: <input type="text" name="image" value="<%=accessory.image%>"></label>
+            <input type="submit">
+        </form>
+        </div>
+</body>
+</html>

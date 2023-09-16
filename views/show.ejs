@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/show.css">
+    <title><%=accessory.name%></title>
+</head>
+<body>
+    <div class="container">
+        <h1><%=accessory.name %></h1>
+        <h4>Part #: <%=accessory.partNum%></h4>
+        <h4>Qty: <%=accessory.quantity%></h4>
+        <img src="<%=accessory.image%>" alt="<%=accessory.name%>">
+        <form action="/inventory" method="GET">
+            <button >Back</button>
+        </form>
+        <form action="/inventory/<%=accessory.id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+        <form action="/inventory/<%=accessory.id%>/edit">
+            <button>Edit</button>
+        </form>
+    </div>
+</body>
+</html>

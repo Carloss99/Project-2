@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
+    <div class="container">
     <h1>Inventory</h1>
     <table>
+        <thead><h3>Accessories</h3></thead>
         <tr>
             <th>Name</th>
             <th>Part #</th>
@@ -18,11 +21,19 @@
                 <td><a href="/inventory/<%=inventory[i].id%>"><%=inventory[i].name%></a></td>
                 <td><%=inventory[i].partNum%></td>
                 <td><%=inventory[i].quantity%></td>
+                <td>
+                <form action="/inventory/<%=inventory[i].id%>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+                </td>
             </tr>
 
         <% } %>
     </table>
+    <form action="/inventory/new" method="GET">
+        <button>Add New Accessory </button>
+    </form>
 
-    
+    </div>
 </body>
 </html>
