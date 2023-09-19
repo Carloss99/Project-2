@@ -1,26 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/show.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel+Decorative&family=Dancing+Script:wght@500&family=Josefin+Sans:ital,wght@1,700&family=Rubik+Iso&family=Shantell+Sans:wght@300&family=Source+Code+Pro:ital,wght@1,700&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
     <title><%=accessory.name%></title>
 </head>
-<body>
-    <div class="container">
+<body class="p-3 mb-2 bg-body-tertiary">
+    <div class="container ">
+        <div class="left">
         <h1><%=accessory.name %></h1>
         <h4>Part #: <%=accessory.partNum%></h4>
-        <h4>Qty: <%=accessory.quantity%></h4>
+
+        <form action="/inventory/<%=accessory.id%>?_method=PUT" method="POST">
+        <h4>Qty: <input type="number" value="<%=accessory.quantity%>" name="quantity" id="qty-input"></h4>
+        <input type="submit" value="Set">
+        </form>
+
+        <div class="controls" >
+            <form action="/inventory" method="GET">
+                <button class="btn btn-outline-secondary">Back</button>
+            </form>
+            <form action="/inventory/<%=accessory.id%>?_method=DELETE" method="POST">
+                <button class="btn btn-outline-secondary">Delete</button>
+            </form>
+            <form action="/inventory/<%=accessory.id%>/edit">
+                <button class="btn btn-outline-secondary">Edit</button>
+            </form>
+            </div>
+        </div>
+        <div class="right">
         <img src="<%=accessory.image%>" alt="<%=accessory.name%>">
-        <form action="/inventory" method="GET">
-            <button >Back</button>
-        </form>
-        <form action="/inventory/<%=accessory.id%>?_method=DELETE" method="POST">
-            <button>Delete</button>
-        </form>
-        <form action="/inventory/<%=accessory.id%>/edit">
-            <button>Edit</button>
-        </form>
+        </div>
+        
+        
     </div>
 </body>
 </html>

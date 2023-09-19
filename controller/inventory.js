@@ -48,6 +48,7 @@ router.post('/', async(req,res) =>{
 
 //Update route
 router.put('/:id', async (req,res) => {
+    console.log(req.body)
     const item = await Inventory.findByIdAndUpdate(req.params.id, req.body, {new:true})
     res.redirect('/inventory/'+ req.params.id)
 })
