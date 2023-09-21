@@ -1,0 +1,23 @@
+
+<div class="container border-top-0">
+    <h1>Inventory</h1>
+        
+        <% for(let i = 0; i< inventory.length; i++) { %>
+            <div class="row align-middle">
+                <div class="col-sm align-middle"><a href="/inventory/<%=inventory[i].id%>" class="badge badge-light"  ><%=inventory[i].name%></a></div>
+
+                
+
+                <div id="quantity" class="col-sm qty" ><%=inventory[i].quantity%></div>
+
+                <div class="col-sm"><img src="<%=inventory[i].image%>" alt="<%=inventory[i].name%>"></div>
+            </div>
+        <% } %>
+    <form action="/inventory/new" method="GET">
+        <button class="btn btn-outline-dark">Add New Accessory </button>
+    </form>
+
+    </div>
+</body>
+
+</html>

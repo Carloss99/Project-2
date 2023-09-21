@@ -4,11 +4,36 @@ body{
 
 }
 .container{
-    width: 50vw;
+    width: 40vw !important;
+    height: 60vh;
     margin: auto;
 }
+h1{
+    text-align: center;
+    margin-top: 1em !important;
+}
 form{
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     width:100%;
+    margin-top: 4em;
+}
+label{
+    display: flex !important;
+    justify-content: space-between !important;
+    font-weight: bold;
+}
+#submit{
+    width: 30%;
+    margin: 0 auto;
+}
+#buttons{
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    color: white !important;
+    text-decoration: none !important;
 }

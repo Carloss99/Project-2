@@ -28,7 +28,7 @@ db.on('disconnected', () => { console.log('mongo disconnected')})
 const inventoryController = require('./controller/inventory.js')
 
 app.get('/', (req,res) =>{
-    res.redirect('/inventory')
+    res.redirect('/inventory/Hook')
 })
 
 app.use('/inventory', inventoryController)

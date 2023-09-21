@@ -13,21 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel+Decorative&family=Dancing+Script:wght@500&family=Josefin+Sans:ital,wght@1,700&family=Rubik+Iso&family=Shantell+Sans:wght@300&family=Source+Code+Pro:ital,wght@1,700&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body class="bg-body-tertiary">
-    
-    <div class="container border-top-0">
-    <h1>Inventory</h1>
-        
-        <% for(let i = 0; i< inventory.length; i++) { %>
-            <div class="row align-middle">
-                <div class="col align-middle"><a href="/inventory/<%=inventory[i].id%>" class="badge badge-light"  ><%=inventory[i].name%></a></div>
-                <div class="col qty" ><%=inventory[i].quantity%></div>
-                <div class="col"><img src="<%=inventory[i].image%>" alt="<%=inventory[i].name%>"></div>
-            </div>
-        <% } %>
-    <form action="/inventory/new" method="GET">
-        <button class="btn btn-outline-dark">Add New Accessory </button>
-    </form>
 
-    </div>
-</body>
-</html>
+    
+    
+   

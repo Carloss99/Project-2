@@ -19,12 +19,12 @@
         <h4>Part #: <%=accessory.partNum%></h4>
 
         <form action="/inventory/<%=accessory.id%>?_method=PUT" method="POST">
-        <h4>Qty: <input type="number" value="<%=accessory.quantity%>" name="quantity" id="qty-input"></h4>
+        <h4>Qty: <input type="number" class="form-control" value="<%=accessory.quantity%>" name="quantity" id="qty-input"></h4>
         <input type="submit" value="Set">
         </form>
 
         <div class="controls" >
-            <form action="/inventory" method="GET">
+            <form action="/inventory/<%=accessory.type%>" method="GET">
                 <button class="btn btn-outline-secondary">Back</button>
             </form>
             <form action="/inventory/<%=accessory.id%>?_method=DELETE" method="POST">

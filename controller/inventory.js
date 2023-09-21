@@ -5,12 +5,30 @@ const router = express.Router()
 //Inventory model imported
 const Inventory = require('../models/inventory')
 
-//Index Route
-router.get('/', async (req,res) => {
-    const inventoryfound = await Inventory.find({})
-    console.log(inventoryfound)
-    res.render('index.ejs', {
-        inventory: inventoryfound
+
+//Hook Route
+router.get('/Hook', async (req,res) => {
+    const hooks = await Inventory.find({type:"Hook"})
+    console.log(hooks)
+    res.render('hook.ejs', {
+        inventory: hooks
+    })
+})
+//Handles route
+router.get('/Handle', async (req,res) =>{
+    const handles = await Inventory.find({type:"Handle"})
+    console.log(handles)
+    res.render('handles.ejs', {
+        inventory: handles
+    })
+})
+
+//Knobs route
+router.get('/Knob', async (req,res) => {
+    const knobs = await Inventory.find({type:'Knob'})
+    console.log(knobs)
+    res.render('knobs.ejs', {
+        inventory: knobs
     })
 })
 
