@@ -10,7 +10,7 @@
 
                 <div id="quantity" class="col-sm qty" ><%=inventory[i].quantity%></div>
 
-                <div class="col-sm"><img src="<%=inventory[i].image%>" alt="<%=inventory[i].name%>"></div>
+                <div id="image" class="col-sm"><img src="<%=inventory[i].image%>" alt="<%=inventory[i].name%>"></div>
             </div>
         <% } %>
     <form action="/inventory/new" method="GET">

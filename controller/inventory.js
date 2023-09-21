@@ -59,9 +59,13 @@ router.get('/:id/edit', async (req,res) =>{
 
 //create route
 router.post('/', async(req,res) =>{
+    try{
     const newItem = await Inventory.create(req.body)
     console.log(newItem)
-    res.redirect('/')
+    res.redirect('/inventory/Hook')
+    }catch(err){
+        res.redirect('/inventory/Hook')
+    }
 })
 
 //Update route

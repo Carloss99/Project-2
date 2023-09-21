@@ -18,9 +18,11 @@ h3{
 
 
 }
-
+#image{
+    height: 100%;
+}
 img{
-    height:5em;
+    height:100%;
 }
 
 a , .qty{
@@ -34,9 +36,9 @@ a:hover{
 
 .row{
     border-bottom: 1px solid black;
-    height: 7em;
+    height: 6em;
     text-align: center;
-    padding-top: 1em;
+    padding: 1em;
     width: 100%;
     margin: 0 auto !important;
     

@@ -1,7 +1,7 @@
 body{
     margin: 0px;
     box-sizing: border-box;
-
+    font-family: 'Source Code Pro', monospace !important;
 }
 .container{
     width: 40vw !important;
@@ -25,13 +25,13 @@ label{
     justify-content: space-between !important;
     font-weight: bold;
 }
-#submit{
-    width: 30%;
-    margin: 0 auto;
-}
+
 #buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around ;
+}
+label input{
+    width: 60% !important;
 }
 a{
     color: white !important;
