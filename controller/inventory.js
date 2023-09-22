@@ -5,8 +5,11 @@ const router = express.Router()
 //Inventory model imported
 const Inventory = require('../models/inventory')
 //main route
-router.get('/', (req,res) => {
-    res.redirect('/inventory/Hook')
+router.get('/', async (req,res) => {
+    const items = await Inventory.find({})
+    res.render('all.ejs', {
+        inventory: items
+    })
 })
 
 //Hook Route
