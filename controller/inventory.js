@@ -4,7 +4,10 @@ const router = express.Router()
 
 //Inventory model imported
 const Inventory = require('../models/inventory')
-
+//main route
+router.get('/', (req,res) => {
+    res.redirect('/inventory/Hook')
+})
 
 //Hook Route
 router.get('/Hook', async (req,res) => {
@@ -64,6 +67,7 @@ router.post('/', async(req,res) =>{
     console.log(newItem)
     res.redirect('/inventory/Hook')
     }catch(err){
+        console.log(err)
         res.redirect('/inventory/Hook')
     }
 })
